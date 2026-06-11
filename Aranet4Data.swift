@@ -84,9 +84,9 @@ enum CO2Level {
 
     var color: String {
         switch self {
-        case .good: return "🟢"
-        case .moderate: return "🟡"
-        case .poor: return "🔴"
+        case .good: return ""
+        case .moderate: return ""
+        case .poor: return ""
         }
     }
 }
