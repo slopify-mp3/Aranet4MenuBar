@@ -80,11 +80,11 @@ class StatusItemController: ObservableObject {
 
         switch currentStatus {
         case .disconnected:
-            button.title = "❌ Disconnected"
+            button.title = "Disconnected"
         case .scanning:
-            button.title = "🔍 Scanning..."
+            button.title = "Scanning..."
         case .connecting:
-            button.title = "🔄 Connecting..."
+            button.title = "Connecting..."
         case .connected:
             if let reading = reading {
                 // Change text color to red only when CO2 is critically high
@@ -101,16 +101,16 @@ class StatusItemController: ObservableObject {
                     button.title = title
                 }
             } else {
-                button.title = "⏳ Reading..."
+                button.title = "Reading..."
             }
         case .notFound:
             if let reading = reading {
                 // Show last reading with time ago
                 let timeAgo = timeAgoString(from: reading.timestamp)
-                button.title = "📡 \(reading.co2) ppm (\(timeAgo))"
+                button.title = "\(reading.co2) ppm (\(timeAgo))"
             } else {
                 // No previous reading available
-                button.title = "📡 Not in Range"
+                button.title = "Not in Range"
             }
         }
     }
